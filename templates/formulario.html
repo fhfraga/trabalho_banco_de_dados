@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <h1>Formulário de Cadastro</h1>
+    <form method="POST" action="/salvar">
+        <h2>Setor</h2>
+        <label for="setor_nome">Nome do Setor:</label>
+        <input type="text" id="setor_nome" name="setor_nome" required><br>
+
+        <h2>Funcionário</h2>
+        <label for="funcionario_primeiro_nome">Primeiro Nome:</label>
+        <input type="text" id="funcionario_primeiro_nome" name="funcionario_primeiro_nome" required><br>
+        <label for="funcionario_sobrenome">Sobrenome:</label>
+        <input type="text" id="funcionario_sobrenome" name="funcionario_sobrenome" required><br>
+        <label for="funcionario_data_admissao">Data de Admissão:</label>
+        <input type="date" id="funcionario_data_admissao" name="funcionario_data_admissao" required><br>
+        <label for="funcionario_status">Status:</label>
+        <input type="checkbox" id="funcionario_status" name="funcionario_status" value="1"><br>
+
+        <h2>Cargo</h2>
+        <label for="cargo_nome">Nome do Cargo:</label>
+        <input type="text" id="cargo_nome" name="cargo_nome" required><br>
+
+        <input type="submit" value="Salvar">
+
+        <a href="{{ url_for('visualizar_dados') }}" class="btn-link">Ir para Visualizar Dados</a>
+    </form>
+
+    
+</body>
+</html>

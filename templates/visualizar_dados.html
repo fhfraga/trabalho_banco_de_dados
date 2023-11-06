@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <meta charset="UTF-8">
+    <title>Visualizar Dados</title>
+</head>
+<body>
+    <h1>Visualização de Dados</h1>
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Primeiro Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Data de Admissão</th>
+                    <th>Status</th>
+                    <th>Cargo</th>
+                    <th>Setor</th>
+                    <th>ID Setor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for funcionario in funcionarios %}
+                <tr>
+                    <td>{{ funcionario.id }}</td>
+                    <td>{{ funcionario.primeiro_nome }}</td>
+                    <td>{{ funcionario.sobrenome }}</td>
+                    <td>{{ funcionario.data_admissao }}</td>
+                    <td>{{ "Ativo" if funcionario.status_funcionario else "Inativo" }}</td>
+                    <td>{{ funcionario.cargo }}</td>
+                    <td>{{ funcionario.setor.nome }}</td>
+                    <td>{{ funcionario.id_setor }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <a href="{{ url_for('formulario') }}" class="btn-link">Ir para Formulário</a>
+</body>
+</html>
